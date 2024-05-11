@@ -3,7 +3,7 @@ import numpy as np
 from tensorflow.keras.models import load_model
 
 # Modelinizi yükleyin
-model = load_model('lab3.h5')  # Modelinizi kaydettiğiniz dosya yolunu buraya girin
+model = load_model('lab4.h5')  # Modelinizi kaydettiğiniz dosya yolunu buraya girin
 
 # Preprocess the image
 def preprocessing(img):
@@ -30,7 +30,7 @@ while True:
         prediction = model.predict(processed_img)  # Modelden tahmin alın
         
         # Tahmin sonuçlarını etiketleyin ve görüntüleyin
-        if prediction[0][0] > prediction[0][1]:
+        if prediction[0][1] > prediction[0][0]:
             label = "Sad"
         else:
             label = "Happy"
